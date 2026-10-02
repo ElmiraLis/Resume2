@@ -1,0 +1,350 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Резюме Лисовской Эльмиры Геннадьевны — экономист, финансовый менеджер, главный бухгалтер.">
+  <meta name="theme-color" content="#07111f">
+  <title>Лисовская Эльмира — финансовый менеджер</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307111f'/%3E%3Cpath d='M17 15h30v9H27v7h16v8H27v9h21v9H17z' fill='%234fe0c1'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0a1728;
+      --surface: rgba(16, 34, 55, .72);
+      --surface-strong: #10243a;
+      --line: rgba(155, 185, 212, .16);
+      --text: #eef7ff;
+      --muted: #9fb3c8;
+      --accent: #4fe0c1;
+      --accent-2: #64a8ff;
+      --accent-3: #b18cff;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .24);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(79, 224, 193, .11), transparent 28rem),
+        radial-gradient(circle at 88% 12%, rgba(100, 168, 255, .12), transparent 32rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .24;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, #000, transparent 85%);
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7, 17, 31, .82);
+      backdrop-filter: blur(18px);
+    }
+    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 760; letter-spacing: -.02em; text-decoration: none; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: #06111e; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 26px rgba(79,224,193,.22); }
+    .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: .9rem; }
+    .nav-links a { text-decoration: none; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--accent); }
+    .download {
+      border: 1px solid rgba(79,224,193,.32);
+      color: var(--accent);
+      background: rgba(79,224,193,.07);
+      padding: 9px 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .download:hover { transform: translateY(-2px); background: rgba(79,224,193,.13); }
+
+    .hero { position: relative; padding: 100px 0 54px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(310px, .55fr); gap: 40px; align-items: end; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--accent); text-transform: uppercase; letter-spacing: .17em; font-size: .78rem; font-weight: 800; }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--accent); }
+    h1 { margin: 0; max-width: 830px; font-size: clamp(3.3rem, 7.5vw, 7rem); line-height: .91; letter-spacing: -.07em; font-weight: 860; }
+    .gradient-name {
+      display: block;
+      color: transparent;
+      background: linear-gradient(110deg, #fff 0%, #bde9ff 35%, var(--accent) 70%, var(--accent-2) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      filter: drop-shadow(0 12px 34px rgba(79,224,193,.10));
+    }
+    .role { margin: 28px 0 0; color: #c7d9e9; font-size: clamp(1.25rem, 2.2vw, 1.8rem); letter-spacing: -.02em; }
+    .role strong { color: var(--accent); font-weight: 650; }
+
+    .contact-card, .panel, .case, .education-card, .experience-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(150deg, rgba(20,45,70,.78), rgba(9,23,39,.66));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+    .contact-card { padding: 26px; border-radius: var(--radius); }
+    .contact-card::before { content: "Открыта к предложениям"; display: inline-flex; color: var(--accent); font-weight: 700; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 19px; }
+    .contact-list { display: grid; gap: 16px; }
+    .contact-item { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: center; }
+    .icon { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; color: var(--accent); background: rgba(79,224,193,.08); border: 1px solid rgba(79,224,193,.12); font-size: .95rem; }
+    .contact-item small { display: block; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; }
+    .contact-item a, .contact-item span { font-size: .95rem; text-decoration: none; overflow-wrap: anywhere; }
+    .contact-item a:hover { color: var(--accent); }
+
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 46px; }
+    .fact { padding: 19px 20px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.025); }
+    .fact strong { display: block; color: var(--text); font-size: 1.12rem; line-height: 1.25; }
+    .fact span { color: var(--muted); font-size: .78rem; }
+
+    section { padding: 64px 0; }
+    .section-head { display: grid; grid-template-columns: 180px 1fr; gap: 34px; align-items: start; margin-bottom: 28px; }
+    .section-number { color: var(--accent); font-size: .8rem; font-weight: 800; letter-spacing: .18em; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1.04; letter-spacing: -.05em; }
+    .section-note { max-width: 680px; margin: 13px 0 0; color: var(--muted); }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skill-card { position: relative; min-height: 210px; padding: 26px; border: 1px solid var(--line); border-radius: 20px; background: rgba(13,30,49,.72); overflow: hidden; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+    .skill-card::after { content: ""; position: absolute; width: 130px; height: 130px; right: -60px; bottom: -70px; border-radius: 50%; background: var(--glow, var(--accent)); filter: blur(30px); opacity: .10; transition: opacity .3s ease, transform .3s ease; }
+    .skill-card:hover { transform: translateY(-8px); border-color: rgba(79,224,193,.35); box-shadow: 0 20px 46px rgba(0,0,0,.25); }
+    .skill-card:hover::after { opacity: .22; transform: scale(1.25); }
+    .skill-no { color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .15em; }
+    .skill-card h3 { margin: 42px 0 9px; font-size: 1.18rem; }
+    .skill-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .cases { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
+    .case { position: relative; padding: 30px; border-radius: 22px; overflow: hidden; }
+    .case:first-child { grid-row: span 2; min-height: 410px; display: flex; flex-direction: column; justify-content: flex-end; background: radial-gradient(circle at 80% 10%, rgba(79,224,193,.14), transparent 45%), linear-gradient(150deg, rgba(20,45,70,.9), rgba(9,23,39,.78)); }
+    .case-kicker { color: var(--accent); font-weight: 750; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; }
+    .case h3 { margin: 13px 0 10px; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.2; }
+    .case p { margin: 0; color: var(--muted); }
+    .case-metric { font-size: clamp(3.4rem, 7vw, 6.8rem); letter-spacing: -.08em; line-height: .9; font-weight: 850; color: transparent; -webkit-text-stroke: 1px rgba(79,224,193,.65); margin-bottom: 36px; }
+
+    .experience-list { position: relative; margin-left: 180px; }
+    .experience-list::before { content: ""; position: absolute; left: 7px; top: 20px; bottom: 20px; width: 1px; background: linear-gradient(var(--accent), rgba(100,168,255,.25), transparent); }
+    .experience-card { position: relative; margin: 0 0 16px 38px; padding: 25px 28px; border-radius: 19px; box-shadow: none; transition: border-color .25s ease, transform .25s ease; }
+    .experience-card:hover { border-color: rgba(100,168,255,.35); transform: translateX(5px); }
+    .experience-card::before { content: ""; position: absolute; left: -38px; top: 31px; width: 15px; height: 15px; border: 3px solid var(--bg); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px rgba(79,224,193,.45), 0 0 20px rgba(79,224,193,.35); }
+    .exp-top { display: grid; grid-template-columns: 170px 1fr; gap: 20px; }
+    .exp-date { color: var(--accent); font-size: .82rem; font-weight: 760; }
+    .exp-date span { display: block; margin-top: 3px; color: var(--muted); font-weight: 500; }
+    .company { color: var(--text); font-weight: 760; }
+    .industry { color: var(--muted); font-size: .82rem; margin-top: 2px; }
+    .position { display: inline-block; margin: 13px 0 8px; padding: 4px 10px; color: #07111f; background: linear-gradient(120deg, var(--accent), #a2f2df); border-radius: 8px; font-size: .76rem; font-weight: 800; }
+    .experience-card p { margin: 0; color: #b4c5d6; font-size: .92rem; }
+
+    .toolbox { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; color: #c7d7e8; background: rgba(255,255,255,.025); font-size: .84rem; transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
+    .tag:hover { color: var(--accent); border-color: rgba(79,224,193,.42); background: rgba(79,224,193,.06); transform: translateY(-2px); }
+    .tag.primary { color: #07111f; border-color: transparent; background: linear-gradient(120deg, var(--accent), #9ad9ff); font-weight: 760; }
+
+    .education-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .education-card { padding: 25px; border-radius: 19px; box-shadow: none; }
+    .year { color: var(--accent); font-weight: 800; font-size: 1.35rem; }
+    .education-card h3 { margin: 22px 0 8px; font-size: 1.05rem; }
+    .education-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+
+    .footer { padding: 56px 0 42px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; align-items: end; }
+    .footer h2 { max-width: 700px; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer-meta { color: var(--muted); text-align: right; font-size: .82rem; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+
+    @media (max-width: 900px) {
+      .hero { padding-top: 72px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .contact-card { max-width: 620px; }
+      .facts { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-head { grid-template-columns: 100px 1fr; }
+      .experience-list { margin-left: 100px; }
+      .cases { grid-template-columns: 1fr; }
+      .case:first-child { grid-row: auto; min-height: 340px; }
+      .education-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .nav { min-height: 60px; }
+      .nav-links { display: none; }
+      .download { padding: 7px 11px; font-size: .82rem; }
+      .hero { padding: 58px 0 36px; }
+      h1 { font-size: clamp(3rem, 15vw, 4.4rem); }
+      .facts, .skills-grid { grid-template-columns: 1fr; }
+      section { padding: 46px 0; }
+      .section-head { grid-template-columns: 1fr; gap: 8px; }
+      .experience-list { margin-left: 0; }
+      .experience-card { margin-left: 27px; padding: 21px; }
+      .experience-card::before { left: -27px; }
+      .experience-list::before { left: 7px; }
+      .exp-top { grid-template-columns: 1fr; gap: 9px; }
+      .case, .contact-card { padding: 22px; }
+      .footer-inner { display: block; }
+      .footer-meta { margin-top: 24px; text-align: left; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      :root { --bg: #fff; --text: #10243a; --muted: #40566d; --line: #d8e1e8; }
+      body { background: #fff; }
+      body::before, .topbar, .download { display: none; }
+      .hero { padding-top: 30px; }
+      .contact-card, .panel, .case, .education-card, .experience-card, .skill-card { background: #fff; box-shadow: none; break-inside: avoid; }
+      .gradient-name { color: #10243a; -webkit-text-fill-color: #10243a; }
+      .experience-list { margin-left: 0; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav container" aria-label="Основная навигация">
+      <a class="brand" href="#top" aria-label="К началу страницы"><span class="brand-mark">ЭЛ</span><span>Эльмира Лисовская</span></a>
+      <div class="nav-links"><a href="#expertise">Экспертиза</a><a href="#experience">Опыт</a><a href="#education">Образование</a></div>
+      <button class="download" type="button" onclick="window.print()">Сохранить PDF</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Резюме · Москва</p>
+            <h1><span class="gradient-name">Эльмира</span> Лисовская</h1>
+            <p class="role">Экономист · Финансовый менеджер · <strong>Главный бухгалтер</strong></p>
+          </div>
+          <aside class="contact-card" aria-label="Контактная информация">
+            <div class="contact-list">
+              <div class="contact-item"><span class="icon">☎</span><div><small>Телефон</small><a href="tel:+79031881815">+7 (903) 188-18-15</a></div></div>
+              <div class="contact-item"><span class="icon">✉</span><div><small>Предпочитаемый способ связи</small><a href="mailto:elmira_l@list.ru">elmira_l@list.ru</a></div></div>
+              <div class="contact-item"><span class="icon">⌖</span><div><small>Местоположение</small><span>Москва · м. Молодёжная</span></div></div>
+            </div>
+          </aside>
+        </div>
+        <div class="facts reveal">
+          <div class="fact"><strong>18+ лет</strong><span>профессионального опыта</span></div>
+          <div class="fact"><strong>Полная / частичная</strong><span>желаемая занятость</span></div>
+          <div class="fact"><strong>Офис / удалённо</strong><span>подходящий формат</span></div>
+          <div class="fact"><strong>Россия</strong><span>гражданство и разрешение</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-head reveal"><span class="section-number">01 / ЭКСПЕРТИЗА</span><div><h2>Финансы под контролем.<br>От первички до стратегии.</h2><p class="section-note">Комплексное ведение бухгалтерского, налогового и управленческого учета для производственных, торговых и сервисных компаний.</p></div></div>
+        <div class="skills-grid">
+          <article class="skill-card reveal"><span class="skill-no">01</span><h3>Бухгалтерский и налоговый учёт</h3><p>Полный цикл учета, отчетность, ОСНО и УСН, НДС, зарплата, основные средства и взаимодействие с фондами.</p></article>
+          <article class="skill-card reveal" style="--glow: var(--accent-2)"><span class="skill-no">02</span><h3>Управленческие финансы</h3><p>БДР, БДДС, ДДС, ОПиУ, план-факт анализ и подготовка финансовых данных для руководителя.</p></article>
+          <article class="skill-card reveal" style="--glow: var(--accent-3)"><span class="skill-no">03</span><h3>Производственная экономика</h3><p>Расчёт себестоимости, незавершённое производство, списание материалов и давальческая переработка.</p></article>
+          <article class="skill-card reveal"><span class="skill-no">04</span><h3>Контрактная аналитика</h3><p>Пообъектный и поконтрактный расчёт себестоимости, валовой и маржинальной прибыли.</p></article>
+          <article class="skill-card reveal" style="--glow: var(--accent-2)"><span class="skill-no">05</span><h3>Банки и финансирование</h3><p>Рублёвые и валютные счета, овердрафт, внутренние займы, лизинг и факторинг.</p></article>
+          <article class="skill-card reveal" style="--glow: var(--accent-3)"><span class="skill-no">06</span><h3>Контроль и проверки</h3><p>Успешное взаимодействие с ИФНС, ФСС, банками, таможней и проверяющими по госконтрактам.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="cases-title">
+      <div class="container">
+        <div class="section-head reveal"><span class="section-number">02 / КЕЙСЫ</span><div><h2 id="cases-title">Практический результат</h2><p class="section-note">Задачи, в которых финансовая экспертиза превращается в понятный бизнес-результат.</p></div></div>
+        <div class="cases">
+          <article class="case reveal"><div class="case-metric">360°</div><span class="case-kicker">Производственный контур</span><h3>Настроен сквозной учёт — от материалов до готовой продукции</h3><p>Списание комплектующих, складской контроль, давальческое сырьё, незавершённое производство, инвентаризация и расчёт себестоимости отдельных участков.</p></article>
+          <article class="case reveal"><span class="case-kicker">Цифровизация</span><h3>Переход на ЭДО с контрагентами</h3><p>Выстроено электронное взаимодействие с партнёрами, ИФНС и фондами.</p></article>
+          <article class="case reveal"><span class="case-kicker">Финансовая аналитика</span><h3>Экономика каждого контракта</h3><p>Расчёт полной себестоимости, валовой и маржинальной прибыли по объектам и контрактам.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal"><span class="section-number">03 / ОПЫТ</span><div><h2>Профессиональный путь</h2><p class="section-note">Опыт в производстве, оптовой торговле, услугах, строительстве, аудите и страховании.</p></div></div>
+        <div class="experience-list">
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Июнь 2021 — Октябрь 2022<span>1 год 5 месяцев</span></div><div><div class="company">ЗАО «СКАНДИ Ком»</div><div class="industry">Производство · оптовая торговля</div><span class="position">Главный бухгалтер</span><p>Производственный учет, зарплата, займы, лизинг, рублёвые и валютные счета, бухгалтерская и налоговая отчетность, экспортный НДС и таможенная отчетность. ЭДО, реестродержатель акций, проверки ИФНС и госконтрактов, внутренний управленческий учет.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Январь 2013 — Апрель 2019<span>6 лет 4 месяца</span></div><div><div class="company">ООО «Джи Эм Информ»</div><div class="industry">Услуги · работы · производство · оптовая торговля</div><span class="position">Главный бухгалтер</span><p>Постановка учета комплектующих, контроль склада, валютные операции, отчетность, ИФНС, давальческая переработка, лизинг и факторинг. Расчёт себестоимости производственных участков.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Ноябрь 2011 — Май 2012<span>7 месяцев</span></div><div><div class="company">КАФ «Эккомсервис»</div><div class="industry">Аутсорсинг · аудит</div><span class="position">Бухгалтер-консультант</span><p>Полный бухгалтерский и налоговый учет производственной компании, управленческий учет по запросу директора и аудит.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Октябрь 2007 — Октябрь 2011<span>4 года 1 месяц</span></div><div><div class="company">ЗАО «СКАНДИ Ком»</div><div class="industry">Производство · оптовая торговля</div><span class="position">Главный бухгалтер / финансовый директор</span><p>Полный контур бухгалтерского и налогового учета. Управленческий учет: валовая прибыль и полная себестоимость по контрактам, подготовка документов для банковского овердрафта.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Апрель 2007 — Сентябрь 2007<span>6 месяцев</span></div><div><div class="company">ООО «Ракурс»</div><div class="industry">Реставрация раритетных автомобилей</div><span class="position">Главный бухгалтер</span><p>Зарплата, списание материалов, касса, подотчетные лица и отчетность компании на УСН.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Сентябрь 2005 — Ноябрь 2006<span>1 год 3 месяца</span></div><div><div class="company">ООО «Иником 97»</div><div class="industry">Производство · оптовая торговля</div><span class="position">Главный бухгалтер</span><p>Основные средства, лизинг, курсовые разницы, зарплата, транспортный налог, НДС по холдингу, ОСНО и УСН, агентские договоры и встречные проверки ИФНС.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Февраль 2003 — Август 2005<span>2 года 7 месяцев</span></div><div><div class="company">ЗАО «МЗТА-Инжиниринг»</div><div class="industry">Проектирование · строительство · производство</div><span class="position">Главный бухгалтер</span><p>Документооборот, производство, сырьевая себестоимость, НЗП, инвентаризация, зарплата и отчетность. Проверки ИФНС, банка и ФСС. БДР, БДДС, ДДС и пообъектная прибыль.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Июнь 2002 — Февраль 2003<span>9 месяцев</span></div><div><div class="company">Филиал МООСВК «Казачьи традиции»</div><div class="industry">Услуги</div><span class="position">Главный бухгалтер</span><p>Расчет заработной платы, акты выполненных работ, налоговая и бухгалтерская отчетность.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Январь 2002 — Июнь 2002<span>6 месяцев</span></div><div><div class="company">ООО «Межрегионтехнология»</div><div class="industry">Авторемонтные работы</div><span class="position">Главный бухгалтер</span><p>Акты выполненных работ, расчет заработной платы, налоговая и бухгалтерская отчетность.</p></div></div></article>
+          <article class="experience-card reveal"><div class="exp-top"><div class="exp-date">Июль 2001 — Октябрь 2001<span>4 месяца</span></div><div><div class="company">«Росгосстрах-Подмосковье»</div><div class="industry">Мытищинский филиал</div><span class="position">Представитель по страхованию юридических лиц</span><p>Заключение договоров страхования с юридическими лицами.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="tools-title">
+      <div class="container">
+        <div class="section-head reveal"><span class="section-number">04 / ИНСТРУМЕНТЫ</span><div><h2 id="tools-title">Системы и компетенции</h2><p class="section-note">Рабочий набор для точного учета, быстрой отчетности и прозрачной финансовой аналитики.</p></div></div>
+        <div class="toolbox reveal">
+          <span class="tag primary">1С: Предприятие 8</span><span class="tag primary">1С: УНФ</span><span class="tag primary">Контур-Экстерн</span><span class="tag primary">СБиС</span>
+          <span class="tag">Налоговая отчетность</span><span class="tag">Бухгалтерский учет</span><span class="tag">Налоговый учет</span><span class="tag">Управленческий учет</span><span class="tag">Основные средства</span><span class="tag">ТМЦ</span><span class="tag">Расчет затрат</span><span class="tag">Расчет НДС</span><span class="tag">Расчет налогов</span><span class="tag">ПФР</span><span class="tag">ФСС</span><span class="tag">Работа с банками</span><span class="tag">ЭДО</span><span class="tag">Факторинг</span><span class="tag">Лизинг</span><span class="tag">Экспортные операции</span><span class="tag">Договорная работа</span><span class="tag">Деловая переписка</span><span class="tag">БДР</span><span class="tag">БДДС</span><span class="tag">ДДС</span><span class="tag">ОПиУ</span><span class="tag">Расчет себестоимости</span><span class="tag">Маржинальная прибыль</span><span class="tag">КонсультантПлюс</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head reveal"><span class="section-number">05 / ОБРАЗОВАНИЕ</span><div><h2>Экономика, право, коммуникации</h2></div></div>
+        <div class="education-grid">
+          <article class="education-card reveal"><div class="year">2001</div><h3>БГУТ</h3><p>Экономический факультет<br>Квалификация: экономист</p></article>
+          <article class="education-card reveal"><div class="year">2008</div><h3>Современная гуманитарная академия</h3><p>Юридический факультет<br>Специальность: юриспруденция</p></article>
+          <article class="education-card reveal"><div class="year">2023</div><h3>НИ Томский государственный университет</h3><p>Создание контента для СМИ и новых медиа</p></article>
+        </div>
+        <div class="facts reveal" style="margin-top:16px">
+          <div class="fact"><strong>Русский</strong><span>родной язык</span></div>
+          <div class="fact"><strong>Категория B</strong><span>водительские права</span></div>
+          <div class="fact"><strong>Свой автомобиль</strong><span>опыт вождения</span></div>
+          <div class="fact"><strong>Без переезда</strong><span>без командировок</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><p class="eyebrow">Контакты</p><h2>Готова обсудить финансовые задачи вашей компании.</h2><p><a href="mailto:elmira_l@list.ru">elmira_l@list.ru</a> · <a href="tel:+79031881815">+7 (903) 188-18-15</a></p></div>
+      <div class="footer-meta">Лисовская Эльмира Геннадьевна<br>47 лет · Москва</div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
